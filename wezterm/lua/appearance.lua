@@ -15,7 +15,7 @@ M.apply_to_config = function(c)
   c.window_decorations = "RESIZE"
   c.show_new_tab_button_in_tab_bar = false
   c.initial_rows = 50
-  c.initial_cols = 160
+  c.initial_cols = 180
 end
 
 return M
