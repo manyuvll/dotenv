@@ -15,7 +15,7 @@ end
 
 local M = {}
 
-local leader = { mods = mod.c, key = "a", timeout_miliseconds = 1000 }
+local leader = { mods = mod.c, key = "a", timeout_miliseconds = 3000 }
 
 local keys = function()
   local keys = {
@@ -23,14 +23,14 @@ local keys = function()
     keybind({ mod.l, mod.c }, "a", act.SendString("\x01")),
 
     -- pane and tabs
-    keybind({ mod.l }, "ö", act.SplitVertical({ domain = "CurrentPaneDomain" })),
-    keybind({ mod.l }, "ä", act.SplitHorizontal({ domain = "CurrentPaneDomain" })),
+    keybind({ mod.l }, ".", act.SplitVertical({ domain = "CurrentPaneDomain" })),
+    keybind({ mod.l }, "/", act.SplitHorizontal({ domain = "CurrentPaneDomain" })),
     keybind({ mod.l }, "z", act.TogglePaneZoomState),
     keybind({ mod.l }, "c", act.SpawnTab("CurrentPaneDomain")),
-    keybind({ mod.l }, "h", act.ActivatePaneDirection("Left")),
-    keybind({ mod.l }, "j", act.ActivatePaneDirection("Down")),
-    keybind({ mod.l }, "k", act.ActivatePaneDirection("Up")),
-    keybind({ mod.l }, "l", act.ActivatePaneDirection("Right")),
+    keybind({ mod.l }, "LeftArrow", act.ActivatePaneDirection("Left")),
+    keybind({ mod.l }, "DownArrow", act.ActivatePaneDirection("Down")),
+    keybind({ mod.l }, "UpArrow", act.ActivatePaneDirection("Up")),
+    keybind({ mod.l }, "RightArrow", act.ActivatePaneDirection("Right")),
     keybind({ mod.l }, "x", act.CloseCurrentPane({ confirm = true })),
     keybind({ mod.l, mod.s }, "H", act.AdjustPaneSize({ "Left", 5 })),
     keybind({ mod.l, mod.s }, "J", act.AdjustPaneSize({ "Down", 5 })),
