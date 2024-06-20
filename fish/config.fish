@@ -46,6 +46,8 @@ if status is-interactive
 
     set -gx XDG_CONFIG_HOME $HOME/.config
 
+    set -gx NVM_DIR (brew --prefix nvm)
+
 
     # OS-specific configuration
     switch (uname)
