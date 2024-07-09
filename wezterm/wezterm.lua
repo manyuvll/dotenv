@@ -28,6 +28,7 @@ c.status_update_interval = 2000
 c.set_environment_variables = {
   PATH = '/opt/homebrew/bin/:' .. os.getenv('PATH')
 }
+c.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 
 -- appearance
 appearance.apply_to_config(c)

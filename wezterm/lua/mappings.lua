@@ -16,6 +16,7 @@ end
 local M = {}
 
 local leader = { mods = mod.c, key = "a", timeout_miliseconds = 3000 }
+-- local leader = { key = "Space", mods = "SHIFT", timeout_milliseconds = 3000 }
 
 local keys = function()
   local keys = {
@@ -26,7 +27,8 @@ local keys = function()
     keybind({ mod.l }, ".", act.SplitVertical({ domain = "CurrentPaneDomain" })),
     keybind({ mod.l }, "/", act.SplitHorizontal({ domain = "CurrentPaneDomain" })),
     keybind({ mod.l }, "z", act.TogglePaneZoomState),
-    keybind({ mod.l }, "c", act.SpawnTab("CurrentPaneDomain")),
+    keybind({ mod.l }, "t", act.SpawnTab("CurrentPaneDomain")),
+    keybind({ mod.l }, "y", act.CloseCurrentTab({ confirm = true })),
     keybind({ mod.l }, "LeftArrow", act.ActivatePaneDirection("Left")),
     keybind({ mod.l }, "DownArrow", act.ActivatePaneDirection("Down")),
     keybind({ mod.l }, "UpArrow", act.ActivatePaneDirection("Up")),
@@ -36,24 +38,6 @@ local keys = function()
     keybind({ mod.l, mod.s }, "J", act.AdjustPaneSize({ "Down", 5 })),
     keybind({ mod.l, mod.s }, "K", act.AdjustPaneSize({ "Up", 5 })),
     keybind({ mod.l, mod.s }, "L", act.AdjustPaneSize({ "Right", 5 })),
-    keybind({ mod.l, mod.s }, "&", act.CloseCurrentTab({ confirm = true })),
-    keybind(
-      { mod.l },
-      "e",
-      act.PromptInputLine({
-        description = wez.format({
-          { Attribute = { Intensity = "Bold" } },
-          { Foreground = { AnsiColor = "Fuchsia" } },
-          { Text = "Renaming Tab Title...:" },
-        }),
-        action = callback(function(win, _, line)
-          if line == "" then
-            return
-          end
-          win:active_tab():set_title(line)
-        end),
-      })
-    ),
 
     -- workspaces
     keybind({ mod.l }, "w", act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" })),
