@@ -56,6 +56,16 @@ local keys = function()
         size = { Cells = 6 },
       })
     ),
+    -- -- launch lazygit
+    -- keybind(
+    --   { mod.l, mod.s },
+    --   "G",
+    --   act.({
+    --     direction = "Right",
+    --     command = { args = { "lazygit" } },
+    --     size = { Percent = 50 },
+    --   })
+    -- ),
     -- launch lazygit to the right
     keybind(
         { mod.l },

@@ -64,4 +64,5 @@ if status is-interactive
     if test -f $LOCAL_CONFIG
         source $LOCAL_CONFIG
     end
+    fastfetch
 end
